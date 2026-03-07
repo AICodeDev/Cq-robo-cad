@@ -1,0 +1,48 @@
+import cadquery as cq
+from params import CarParams as CapParams # Matching your snippet variable
+
+# --- Top Level Variables ---
+PLATE_X = 24-4-2
+PLATE_Y = 6
+PLATE_Z = 24-4
+
+ROD_SIZE = 12
+ROD_SIZE_H = 12
+ROD_SIZE_W = 12+6
+ROD_SIZE_T = PLATE_Z
+ROD_SIZE_Z = PLATE_Z
+
+ROD_LENGTH = 12+6
+SCREW_HOLE_DIA = 4
+
+def make_cap_bush():
+    # 1. Define Ring Parameters as requested
+    outer_dia = (CapParams.CAP_PIPE_BASE_DIA) + 0.2
+    inner_dia = (CapParams.CAP_PIPE_TOP_DIA) + 1
+    height = 6
+    
+    # 2. Create the Left Plate (Planar)
+    # Positioned at the start of the assembly
+    plate = (
+        cq.Workplane("YZ")
+        .box(PLATE_X, PLATE_Y, PLATE_Z)
+        .faces("<X").workplane()
+        .pushPoints([(6, 0), (-6, 0)]) # Screw holes 6mm deep
+        .hole(SCREW_HOLE_DIA, depth=5)
+    )
+    
+    # 3. Create the Center Connector (SR Rod)
+    # Extruded from the inner face of the plate
+ 
+    # 4. Create the Vertical Pipe/Cylinder
+    # We place the center of the ring at the end of the rod
+    # Using your specific logic: Circle -> Extrude -> Hole
+    result = (
+        plate.faces(">Z")
+        .workplane()
+        .center(11, 0) # Adjusting center based on rod end
+        .circle(outer_dia / 2)
+        .cutThruAll()
+    )
+    
+    return result

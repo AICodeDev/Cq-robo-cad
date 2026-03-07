@@ -1,0 +1,114 @@
+
+===
+Sample Code
+
+/*===========================================================================
+SNM-Gyroscope Example
+By: Roger Nieh (FRC Team 5428, Breaking Bots)
+Last Update: July 12, 2018
+
+Note: Youtube doesn't allow angle brackets, so please fix all '＜' or '＞'
+with the proper 'less-than' and 'greater-than' signs in the code 
+============================================================================*/
+package org.usfirst.frc.team5428.robot;
+import edu.wpi.first.wpilibj.AnalogGyro;
+import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.IterativeRobot;
+
+public class Robot extends IterativeRobot {
+ // Variable Declarations
+ double leftSlow = 0.24;
+ double rightSlow = -0.24;
+ double rotateSpeed = 0.35;
+ double rotateSpeedSlow = 0.25;
+
+ // Inputs
+ AnalogGyro gyro = new AnalogGyro(0); // ANA Ch. 0
+ // NOTE the Gyroscope purchased defines a 300 degree full rotation! (not 360!!)
+
+ // Outputs
+ Victor victorLeft = new Victor(0);  // PWM Ch. 0
+ Victor victorRight = new Victor(1); // PWM Ch. 1
+ Servo servoCam = new Servo(2);   // PWM Ch. 2
+
+ 
+ @Override
+ public void robotInit() {
+  CameraServer.getInstance().startAutomaticCapture("USB Camera 1", 0);
+  gyro.reset();
+  }
+
+ 
+ // =======================================================================
+ // TeleOp Mode (Last Updated: July 12, 2018)
+ // =======================================================================
+ @Override
+ public void teleopInit() {
+ victorLeft.set(0);
+ victorRight.set(0);
+ }
+ @Override
+ public void teleopPeriodic() {
+  // Previewing Gyro Output:
+  System.out.println(Math.round(gyro.getAngle()));
+
+  // Setting a Servo as a Gimbal
+  servoCam.set(0.5 - gyro.getAngle()/175);
+ }
+ 
+ // =======================================================================
+ // Autonomous: Traveling in a straight line for 10 seconds (Last Updated: July 12, 2018)
+ // * To be used in conjunction with the gyro - otherwise the robot will go CRAZY!!!
+ // =======================================================================
+ @Override
+ public void autonomousInit() {
+  gyro.reset();
+ }
+ public void autonomousPeriodic() {
+
+  if (Math.abs(gyro.getAngle()) ＜= 3) {
+   victorLeft.set(leftSlow - (gyro.getAngle()) / 15);
+   victorRight.set(rightSlow - (gyro.getAngle()) / 15);
+  } else if (Math.abs(gyro.getAngle()) ＜ 10) {
+   if (gyro.getAngle() ＞ 0) {
+    victorLeft.set(leftSlow);
+    victorRight.set(1.1 * rightSlow);
+   } else if (gyro.getAngle() ＜ 0) {
+    victorLeft.set(1.1 * leftSlow);
+    victorRight.set(rightSlow);
+   }
+  } else
+   if (gyro.getAngle() ＞ 0) {
+    while (gyro.getAngle() ＞ 10 && isAutonomous()) {
+     victorLeft.set(-rotateSpeed);
+     victorRight.set(-rotateSpeed);
+    }
+   while (gyro.getAngle() ＞ 0 && isAutonomous()) {
+    victorLeft.set(-rotateSpeedSlow);
+    victorRight.set(-rotateSpeedSlow);
+   }
+   while (gyro.getAngle() ＜ 0 && isAutonomous()) {
+    victorLeft.set(rotateSpeedSlow);
+    victorRight.set(rotateSpeedSlow);
+   }
+  } else {
+   while (gyro.getAngle() ＜ -10 && isAutonomous()) {
+    victorLeft.set(rotateSpeed);
+    victorRight.set(rotateSpeed);
+   }
+   while (gyro.getAngle() ＜ 0 && isAutonomous()) {
+    victorLeft.set(rotateSpeedSlow);
+    victorRight.set(rotateSpeedSlow);
+   }
+   while (gyro.getAngle() ＞ 0 && isAutonomous()) {
+    victorLeft.set(-rotateSpeedSlow);
+    victorRight.set(-rotateSpeedSlow);
+   }
+  }
+ }
+}
+Key moments
+
+View all

@@ -1,0 +1,99 @@
+#include "RB_ENCONDERMOTOR.h"
+
+RB_EncoderMotor M1(1);
+RB_EncoderMotor M2(2);
+
+volatile long m1_count = 0;
+volatile long m2_count = 0;
+
+long m1_last = 0;
+long m2_last = 0;
+unsigned long lastTime = 0;
+
+int m1_pwm = 70;
+int m2_pwm = 55;
+
+// Motor specifications - adjust based on your motor
+const int PULSES_PER_REV = 90;  // Change this to match your encoder
+
+void setup() {
+  Serial.begin(9600);
+  
+  pinMode(20, OUTPUT);
+  digitalWrite(20, HIGH);
+  
+  M1.SetMotionMode(PWM_MODE);
+  M2.SetMotionMode(PWM_MODE);
+  
+  attachInterrupt(M1.GetIntterrruptNum(), isr1, CHANGE);
+  attachInterrupt(M2.GetIntterrruptNum(), isr2, CHANGE);
+  
+  M1.SetMotorPwm(m1_pwm);
+  M2.SetMotorPwm(m2_pwm);
+  
+  lastTime = millis();
+}
+
+void loop() {
+  if (millis() - lastTime >= 1000) {
+    // Calculate speed (pulses per 100ms)
+    long m1_speed = m1_count - m1_last;
+    long m2_speed = m2_count - m2_last;
+    
+    // Calculate RPM (pulses per 100ms * 600 / pulses_per_rev)
+    float m1_rpm = (m1_speed * 600.0) / PULSES_PER_REV;
+    float m2_rpm = (m2_speed * 600.0) / PULSES_PER_REV;
+    
+    // Adjust PWM to balance speeds
+    if (m1_speed < m2_speed - 5) {
+      m1_pwm++;  // M1 slower, increase PWM
+      if (m1_pwm > 90) m1_pwm = 90;
+    } else if (m1_speed > m2_speed + 5) {
+      m1_pwm--;  // M1 faster, decrease PWM
+      if (m1_pwm < 50) m1_pwm = 50;
+    }
+    
+    // Apply new PWM
+    M1.SetMotorPwm(m1_pwm);
+    M2.SetMotorPwm(m2_pwm);
+    delay(250);
+    // Print status
+    // Serial.print("M1: ");
+    // Serial.print(m1_count);
+    // Serial.print(" | ");
+    // Serial.print(m1_speed);
+    // Serial.print("pps | ");
+    // Serial.print(m1_rpm, 1);
+    // Serial.print("RPM | PWM:");
+    // Serial.print(m1_pwm);
+    // Serial.print("  ||  M2: ");
+    // Serial.print(m2_count);
+    // Serial.print(" | ");
+    // Serial.print(m2_speed);
+    // Serial.print("pps | ");
+    // Serial.print(m2_rpm, 1);
+    // Serial.print("RPM | PWM:");
+    // Serial.print(m2_pwm);
+    delay(50);
+    long diff = m1_speed - m2_speed;
+    if (abs(diff) < 5) {
+      // Serial.println(" [OK]");
+    } else {
+      // Serial.print(" [DIFF:");
+      // Serial.print(diff);
+      // Serial.println("]");
+    }
+    
+    m1_last = m1_count;
+    m2_last = m2_count;
+    lastTime = millis();
+  }
+}
+
+void isr1() {
+  m1_count++;
+}
+
+void isr2() {
+  m2_count++;
+}
