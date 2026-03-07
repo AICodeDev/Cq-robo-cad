@@ -1,0 +1,211 @@
+ICM SETUP
+setupGyro detected!!!!!!!ICM FIND
+  detected!yro (keep still)=Gyro T: 75.12Enco T:.15  °
+
+--F75.15 262/270
+
+Gyro50 Err23 Dir: -1 Total: 471--
+Target:  ° | Actual:  : 749 75.00 244/24Gyro T: 75.35Enco T:5.34  °
+
+--FGLS: 203 75.34 286/o: 0.03 Dir: 1 T--
+Target:  5.00  ° | Actual:  S: 279 7242
+
+Gyro T: 74.61Eo: 0.39 Dial: 472--
+Target:  :  : 74.63  °
+
+--FGLS: 229 74.62 27rro: 0.27 tal: 461--
+Target: Enco T:  Grro: -0.10 Dir: -1262/260
+
+Buttd
+Gyro T:23Enco T: 74.50 Err  : 75.00 ual:  : 0.41  °
+
+l: 450--Target:  : 75.00  °rr Grro: -0.17otal: 451--
+Target:260
+
+Gyro T: 0.174.50 Err Grro: 0.50-
+Tar5.00  ° | Actual:  : 199 0.0
+
+Gyro T: 0Enco T: 74.67 Err Gr  : 0.39  °
+
+--F0.46 253/251
+
+Gyro  Err Grro: 0-1 Total: 449--
+Target:  : 75.0ctual:  : 0.43  °
+al: 447--
+Target0  ° | Actual:  : 0.39  °
+
+-FGLS: 219 0.46 242/2 0.00 Dir: -1 To-
+Target: 75.00  ° | Actual:LS: 197 0.43 
+Button Pressed
+Gyr| Actual:  : 0.40--FGLS: 233 0.47 246o: 0.50 Dial: 447--
+Target:  :  : 0.39  °
+
+-FGLS: 221 0.46 251/2 0.17 Dir: 1 Tot
+Target:  : 75.00  T: 0: 74.83 Err Grro: 0.9--
+Target:  : | Actual:  : 0.40 et: ICM SETUP
+setupGyroNo ICM 
+
+**No IC**No ICM 
+
+**No ICM**No ICM 
+
+**No IICM SETUP
+setupGyroNo ICM 
+
+**No IC**No ICM 
+
+**No ICM**No ICM 
+
+**No I**No ICM 
+
+**No ICM**No ICM 
+
+**No I**No ICM 
+
+**No ICMetected!!!!!!!
+ICdetected!!!!!!!
+ICM
+ICM FIND
+  deteICM FIND
+  detected!yro (keep still)=Gyro T: 74.78Enco T:81  °
+
+--FG4.81 250/245
+
+Gyro 0 Err Grro: 0.50Total: 447--
+Target9Enco T: 74.67 E0.33 Dir: 1 Total: 400  ° | Ac : 3.25  °
+
+--FGLS: 285 3.57 
+Gyro T: 0.34Enco T:53/257
+
+Gyro T: 0.09ro: 0.33 Dal: 448--
+Target:  :  : 2.31  °
+
+-FGLS: 237 2.50 238/2 0.50 Dir: -1 To-
+Target: 75.00  ° | Actual:LS: 227 2.75 
+Gyro T: 0.70Enco T: /244
+
+Gyro T: 0.72Eo: 0.33 Dir:: 448--
+Target:  :  : 1.29  °--FGLS: 215 0.75 257detected!!ICM SETUP
+setupGyroNo ICM 
+
+**No IC**No ICM 
+
+**No ICM**No ICM 
+
+**No I**No ICM 
+
+**No ICM**No ICM 
+
+**No I**No ICM 
+
+**No ICM
+  detected!!!!!!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!FIND
+  detected!!ICM FIND
+  detected!yro (keep still)=Gyro T: 74.91Enco T:FT:74.93-514
+Gyro T: 74.85Enco T:-FT:74.83-551
+Gyro T: 74.81Enco T:FT:74.81-522
+Gyro T: 75.26Enco T:--FT:75.24-555Gyro T: 74.99Enco T:FT:75.03-520
+Gyro T: 75.22Enco T:--FT:75.22-548Gyro T: 75.23Enco T:-FT:75.23-517
+Gyro T: 74.88Enco T:-FT:74.85-547
+Button Pressed
+Gyro 75.00  °
+
+--FT:74.76-505
+
+Gyro 3 Err Grro: -0.48 otal: 482--
+°Act: co T: 78.17 Err G Dir: 1 Total: 469-- Err 7 Dir: -1 Total: 479-FT:74.7Gyro T: 74.53Enco T:FT:74.53-520
+Gyro T: 74.92Enco T:-FT:74.87-544
+Gyro T: 74.84Enco T:FT:74.86-521
+Gyro T: 75.06Enco T:--FT:75.01-557Button Pressed
+Gyro 75.00  °
+
+--FT:74.49-515
+
+Gyro 7 Err Grro: -0.34 otal: 493--
+°Act: co T: 78.67 Err G8 Dir: 1 Total: 472-FT:75.20Gyro T: 75.22Enco T:--FT:75.20-539Gyro T: 74.95Enco T:FT:74.98-523
+Gyro T: 74.76Enco T:-FT:74.74-539
+Gyro T: 75.02Enco T:-FT:75.03-508
+Gyro T: 74.70Enco T:-FT:74.68-536
+ICM SETUP
+setupGyro detected!!!!!!!ICM FIND
+  detected!yro (keep still)=Gyro T: 0.00Enco T: :0.00-496
+
+Gy0Enco T: 71.52 Err G
+Gyro T: T: 71.52 Err Grro: 0.48 Dir: 1 T--
+°Act: : 0   T: : 72.00  °
+
+--FT:0.00-Gyro T: 0.00Enco T: T:0.00-502
+
+G00Enco T: 72.00 Err  0.00   T  °
+
+--FT:0.00-49otal: 447--
+.00   T: : 72.00  °Gyro T: T: 71.68 Err Grro: 0.32 Dir: -1 8--
+°Act: : 0.00  -FT:0
+Button Pressed
+Gyr72.00  °
+
+--FT
+
+Gyro T:00Enco T: 71.84 Err : 0.00   0  °
+
+--FT:0.00-517
+
+Gyro T: T: 71.84 Err Grro: 49--
+°Act: : 0.072.00  °
+
+--FT:0.0Enco 8 Err Grro: 0.32 Dir72.00  °--FT:0.00-503
+
+Gyror: 1 Total°Act: : 0.00   T: :00Enc6 Err Grro: -0.16 Di 72.00  --FT:0.00-515
+
+Gyror: 1 Total°Act: : 0.00   T: :00Enc4 Err Grro: 0.16 Dir72.00  °--FT:0.00-512
+
+Buttr Grro: 0. Total: 449--
+°Act 0.16 Dir:  449--
+°Act: : 0.0
+--FT:0.00-Gyro T: 0.00Enco T: :0.00-487
+
+Gy2Enco T: 71.84 Err G
+Gyro T: 0. 71.68 Err Grro: 0.3-
+°Act:ICM FIND
+  detected!yro (keep still)=Gyro T: 71.54Enco T:FT:71.53-469
+Gyro T: 72.26Enco T:--FT:72.26-539Gyro T: 71.92Enco T:FT:71.90-501
+Gyro T: 72.09Enco T:--FT:72.10-537Gyro T: 71.96Enco T:FT:71.95-510
+Gyro T: 71.63Enco T:-FT:71.63-503
+Gyro T: 71.74Enco T:FT:71.72-512
+Gyro T: 72.02Enco T:--FT:72.04-526--FT:0.00-511
+
+--FT5
+
+--FT:0
+--FT:0.00-515
+
+--F00-52Button Pressed
+--FT:0.00-535
+
+--FT
+
+--FT:0.524
+
+Button PressedFT:0.00-513
+--FT:0.00-507
+
+--FT4
+
+--FT:0--FT:0.00-519
+
+Butt2
+
+--FT:0
